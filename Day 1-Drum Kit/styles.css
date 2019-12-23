@@ -1,7 +1,11 @@
 html {
   font-size: 10px;
   background: url(https://7wallpapers.net/wp-content/uploads/20_Whiplash.jpg);
-  background-size: 100% auto contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; 
+  background-size: cover;
+  overflow: hidden;
 }
 
 body,html {
