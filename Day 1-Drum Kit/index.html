@@ -63,6 +63,8 @@
   <script>
     disableKeys = false;
     sequence = '';
+    lockCode = 'sad';
+    unlockCode = 'ask';
     playSound = (e) => {
       console.log(e);
       fireAudio(e.keyCode, e.key);
@@ -95,14 +97,14 @@
         sequence = sequence.slice(1);
       }
       sequence += keyName;
-      if (sequence === 'sad') {
+      if (sequence === lockCode) {
         if (!disableKeys) {
           disableKeys = true;
           alert('Drum kit is locked. Please enter correct passcode to unlock!');
           document.body.style.backgroundImage = 'url("https://patrca.files.wordpress.com/2015/01/whiplash2.jpg?w=1400")';
         }
       }
-      else if (sequence === 'ask') {
+      else if (sequence === unlockCode) {
         if (disableKeys) {
           disableKeys = !disableKeys;
           alert('Drum kit is unlocked again. Yaay! Happy drumming!');
@@ -139,8 +141,7 @@
       key.addEventListener('transitionend', removeTransition1)
     });
     console.log(keys);
-    document.body.style.backgroundPosition = 'center';
-    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundSize = '100% auto contain';
   </script>
 
 
